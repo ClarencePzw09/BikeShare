@@ -45,11 +45,32 @@
             android:text="END RIDE"/>
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <Button
+            android:id="@+id/list_ride_button"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="LIST RIDES"/>
+
+    </LinearLayout>
 
 
     <View
         android:layout_width="match_parent"
         android:layout_height="20dp" />
+
+    <ListView
+        android:id="@+id/main_list_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize = "12sp"></ListView>
 
     <!--<View android : layout_width =" match_parent "-->
     <!--android : layout_height ="20 dp" />-->
