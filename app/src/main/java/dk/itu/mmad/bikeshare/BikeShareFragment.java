@@ -14,6 +14,7 @@ import java.util.List;
 public class BikeShareFragment extends Fragment {
     private Button mAddRide;
     private Button mEndRide;
+    private Button mListRide;
     private static RidesDB sRidesDB;
     private ListView mListView;
     private RideArrayAdapter mAdapter;
@@ -38,6 +39,8 @@ public class BikeShareFragment extends Fragment {
                 Intent intent = new Intent(getActivity(),StartRideActivity.class);
                 startActivity(intent);
 
+//                startActivityForResult(intent,0);
+
             }
         });
 
@@ -52,15 +55,26 @@ public class BikeShareFragment extends Fragment {
             }
         });
 
-        //Singleton to share an object between the app activities
-        sRidesDB = RidesDB.get(getActivity());
-        List<Ride> values = sRidesDB.getsRidesDB();
+        mListRide = (Button) v.findViewById(R.id.list_ride_button);
 
-        //Create the adapter
+        mListRide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),ListRideActivity.class);
+                startActivity(intent);
 
-        mAdapter = new RideArrayAdapter(getActivity(),values);
-        mListView = (ListView) v.findViewById(R.id.main_list_view);
-        mListView.setAdapter(mAdapter);
+            }
+        });
+
+//        //Singleton to share an object between the app activities
+//        sRidesDB = RidesDB.get(getActivity());
+//        List<Ride> values = sRidesDB.getsRidesDB();
+//
+//        //Create the adapter
+//
+//        mAdapter = new RideArrayAdapter(getActivity(),values);
+//        mListView = (ListView) v.findViewById(R.id.main_list_view);
+//        mListView.setAdapter(mAdapter);
         return v;
     }
 

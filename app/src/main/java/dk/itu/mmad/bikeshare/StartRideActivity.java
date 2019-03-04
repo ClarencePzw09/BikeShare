@@ -17,6 +17,8 @@ public class StartRideActivity extends AppCompatActivity {
     private TextView mLastAdded;
     private TextView mNewWhat;
     private TextView mNewWhere;
+    private static RidesDB sRidesDB;
+
 
     private Ride mLast = new Ride("","","");
 
@@ -41,14 +43,19 @@ public class StartRideActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if((mNewWhat.getText().length() > 0) && (mNewWhere.getText().length() > 0)){
-                    mLast.setmBikeName(mNewWhat.getText().toString().trim());
-                    mLast.setmStartRide(mNewWhere.getText().toString().trim());
+
+                    String bikeName = mNewWhat.getText().toString().trim();
+                    String origin = mNewWhere.getText().toString().trim();
+
+                    mLast.setmBikeName(bikeName);
+                    mLast.setmStartRide(origin);
 
                     //Reset Text Fields
                     mNewWhat.setText("");
                     mNewWhere.setText("");
 
                     updateUI();
+                    addRideToDB(bikeName,origin);
                 }
             }
         });
@@ -59,6 +66,11 @@ public class StartRideActivity extends AppCompatActivity {
     private void updateUI(){
 
         mLastAdded.setText(mLast.toString());
+    }
+
+    private void addRideToDB(String bike,String origin){
+        RidesDB sRidesDB = RidesDB.get(getParent());
+        sRidesDB.addRide(bike,origin);
     }
 
 }

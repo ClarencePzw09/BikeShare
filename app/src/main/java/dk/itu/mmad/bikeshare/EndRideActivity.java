@@ -11,7 +11,7 @@ import dk.itu.mmad.bikeshare.R;
 public class EndRideActivity extends AppCompatActivity {
 
     private Button mAddRide;
-    private TextView mLastAdded;
+    private TextView mLastEnded;
     private TextView mNewWhat;
     private TextView mNewWhere;
 
@@ -22,7 +22,7 @@ public class EndRideActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end_ride);
 
-        mLastAdded = (TextView) findViewById(R.id.last_ride);
+        mLastEnded = (TextView) findViewById(R.id.last_ride);
 
         updateUI();
 
@@ -38,14 +38,20 @@ public class EndRideActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if((mNewWhat.getText().length() > 0) && (mNewWhere.getText().length() > 0)){
-                    mLast.setmBikeName(mNewWhat.getText().toString().trim());
-                    mLast.setmStartRide(mNewWhere.getText().toString().trim());
+
+                    String bikeName = mNewWhat.getText().toString().trim();
+                    String destination = mNewWhere.getText().toString().trim();
+
+
+                    mLast.setmBikeName(bikeName);
+                    mLast.setmStartRide(destination);
 
                     //Reset Text Fields
                     mNewWhat.setText("");
                     mNewWhere.setText("");
 
                     updateUI();
+                    endRideToDB(bikeName,destination);
                 }
             }
         });
@@ -55,6 +61,11 @@ public class EndRideActivity extends AppCompatActivity {
 
     private void updateUI(){
 
-        mLastAdded.setText(mLast.toString());
+        mLastEnded.setText(mLast.toString());
+    }
+
+    private void endRideToDB(String bike,String destination){
+        RidesDB sRidesDB = RidesDB.get(getParent());
+        sRidesDB.endRide(bike,destination);
     }
 }

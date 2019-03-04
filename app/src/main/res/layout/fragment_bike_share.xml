@@ -61,31 +61,39 @@
             android:text="LIST RIDES"/>
 
     </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--&gt;-->
+        <!--<TextView android:id="@+id/column_header1"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="What bike?"-->
+            <!--/>-->
+        <!--<TextView android:id="@+id/column_header2"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="Pick Up Location"-->
+            <!--/>-->
+        <!--<TextView android:id="@+id/column_header3"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="Drop Off Location"-->
+            <!--/>-->
+    <!--</LinearLayout>-->
 
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
+    <!--<ListView-->
+        <!--android:id="@+id/main_list_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize = "12sp"-->
+        <!--android:background="@color/colorPrimaryLight"></ListView>-->
 
-    <ListView
-        android:id="@+id/main_list_view"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize = "12sp"></ListView>
-
-    <!--<View android : layout_width =" match_parent "-->
-    <!--android : layout_height ="20 dp" />-->
-    <!--&lt;!&ndash; Button to add ride&#45;&#45; >-->
-
-    <!--<Button android :id="@+id/ add_button " />-->
-
-    <!--<TextView-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:text="Hello World!"-->
-    <!--app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--app:layout_constraintLeft_toLeftOf="parent"-->
-    <!--app:layout_constraintRight_toRightOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent" />-->
 
 </LinearLayout>
