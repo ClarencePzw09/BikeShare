@@ -11,40 +11,43 @@
         android:layout_height="40sp"
         android:text="To Delete any of the following Rides, please click on it"
         android:gravity="center"/>
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--&gt;-->
+        <!--<TextView android:id="@+id/column_header1"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="Bike ID"-->
+            <!--/>-->
+        <!--<TextView android:id="@+id/column_header3"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="Pick Up Location"-->
+            <!--/>-->
+        <!--<TextView android:id="@+id/column_header4"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="Drop Off Location"-->
+            <!--/>-->
+        <!--&lt;!&ndash;<TextView android:id="@+id/column_header4"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="0dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_weight="1"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:text="Drop Off Location"&ndash;&gt;-->
+            <!--&lt;!&ndash;/>&ndash;&gt;-->
+    <!--</LinearLayout>-->
 
-
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@color/colorPrimary"
-        >
-        <TextView android:id="@+id/column_header1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="What bike?"
-            />
-        <TextView android:id="@+id/column_header2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Pick Up Location"
-            />
-        <TextView android:id="@+id/column_header3"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Drop Off Location"
-            />
-    </LinearLayout>
-
-
-    <ListView
-        android:id="@+id/act_list_view"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize = "12sp"
-        android:background="@color/colorPrimaryLight"></ListView>
+        android:layout_height="match_parent"
+        android:textSize="12sp"
+        android:background="@color/colorPrimaryLight"/>
 
 </LinearLayout>

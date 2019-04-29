@@ -1,5 +1,6 @@
 package dk.itu.mmad.bikeshare;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,14 +16,19 @@ import java.util.List;
 import dk.itu.mmad.bikeshare.R;
 
 public class BikeShareActivity extends AppCompatActivity {
-
-
+    private UserVM userVM;
+    private TextView userBalanceView;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_bike_share);
 
         FragmentManager fm = getSupportFragmentManager();
+
+        userVM = ViewModelProviders.of(this).get(UserVM.class);
+        updateUI();
+
 
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);
 
@@ -33,6 +39,25 @@ public class BikeShareActivity extends AppCompatActivity {
         }
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateUI();
+    }
+
+    private void updateUI(){
+        User user = userVM.getUser(5);
+        if(user == null){
+            userVM.insert(new User(5,"handsome",5300.0));
+            user=userVM.getUser(5);
+            System.out.println(user.getBalance());
+        }
+
+        userBalanceView = (TextView)findViewById(R.id.user_balance_text);
+        userBalanceView.setText("Your Balance: "+String.valueOf(user.getBalance()));
+    }
+
 
 
 //    private Button mAddRide;

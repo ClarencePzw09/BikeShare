@@ -8,13 +8,16 @@
     android:orientation="vertical"
     tools:context="dk.itu.mmad.bikeshare.BikeShareFragment"
     >
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Welcome To the App"
         android:gravity="center"/>
-
+    <TextView
+        android:id="@+id/user_balance_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,6 +62,36 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:text="LIST RIDES"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <Button
+            android:id="@+id/register_bike_button"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="REGISTER BIKE"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <Button
+            android:id="@+id/list_bike_button"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="LIST BIKES"/>
 
     </LinearLayout>
     <!--<LinearLayout-->
